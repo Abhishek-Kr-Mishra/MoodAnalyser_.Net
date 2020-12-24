@@ -8,7 +8,7 @@ namespace MoodAnalyzer
         {
             Console.WriteLine("Welcome to Mood Analyser Program");
             MoodAnalyser moodAnalyser = new MoodAnalyser();
-            Console.WriteLine(moodAnalyser.AnalyseMood("I am in Happy Mood"));
+            Console.WriteLine(moodAnalyser.AnalyseMood("I am in Sad Mood"));
         }
     }
 }
