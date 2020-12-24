@@ -10,17 +10,15 @@ namespace MoodAnalyzerUnitTest
         public void GivenMood_ShouldReturn_Sad()
         {
             string expected = "Sad";
-            string message = "I am Sad";
-            MoodAnalyser moodAnalyser = new MoodAnalyser();
-            Assert.AreEqual(expected, moodAnalyser.AnalyseMood(message));
+            MoodAnalyser moodAnalyser = new MoodAnalyser("I am Sad");
+            Assert.AreEqual(expected, moodAnalyser.AnalyseMood());
         }
         [TestMethod]
         public void GivenMethod_ShouldReturn_Happy()
         {
             string expected = "Happy";
-            string message = "I am Happy";
-            MoodAnalyser moodAnalyser = new MoodAnalyser();
-            Assert.AreEqual(expected, moodAnalyser.AnalyseMood(message));
+            MoodAnalyser moodAnalyser = new MoodAnalyser("I am Happy");
+            Assert.AreEqual(expected, moodAnalyser.AnalyseMood());
         }
 
     }
