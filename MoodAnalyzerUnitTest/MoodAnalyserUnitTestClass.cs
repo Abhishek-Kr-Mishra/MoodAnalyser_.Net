@@ -76,5 +76,26 @@ namespace MoodAnalyzerUnitTest
             object actual = MoodAnalyserReflection.CreateMoodAnalysisInParameterConstructor("MoodAnalyzer.MoodAnalyser", "MoodAnalyser");
             Assert.AreEqual(obj.GetType().Equals(actual.GetType()), true);
         }
+        [TestMethod]
+        public void GivenMoodAnalyserClassName_WhenAnalyse_ShouldReturnObjectWithMethodInfo()
+        {
+            string actual = MoodAnalyserReflection.CreateMoodAnalysisInParameterMethod("AnalyseMood", "In-Prooper field Name");
+            string expected = "NULL_MESSAGE";
+            Assert.AreEqual(actual, expected);
+        }
+        [TestMethod]
+        public void GivenMoodAnalyserClassName_WhenAnalyse_ShouldReturnObjectWhilePassingNull()
+        {
+            string actual = MoodAnalyserReflection.CreateMoodAnalysisInParameterMethod("AnalyseMood", null);
+            string expected = "NULL_MESSAGE";
+            Assert.AreEqual(actual, expected);
+        }
+        [TestMethod]
+        public void GivenMoodAnalyserClassName_WhenAnalyse_ShouldReturnObjectWithFieldInfo()
+        {
+            string actual = MoodAnalyserReflection.CreateMoodAnalysisInParameterMethod("AnalyseMood", "message");
+            string expected = "Happy";
+            Assert.AreEqual(actual, expected);
+        }
     }
 }
