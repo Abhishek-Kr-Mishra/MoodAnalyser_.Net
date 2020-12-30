@@ -30,5 +30,26 @@ namespace MoodAnalyzer
                 throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionsType.NO_SUCH_METHOD,"Im-proper Constructor Name");
             }
         }
+        public static Object CreateMoodAnalysisInParameterConstructor(string className, string constructorName)
+        {
+            Type type = typeof(MoodAnalyser);
+            if (type.FullName.Equals(className))
+            {
+                if (type.Name.Equals(constructorName))
+                {
+                    ConstructorInfo ctor = type.GetConstructor(new[] { typeof(string) });
+                    object insstance = ctor.Invoke(new object[] { "HAPPY" });
+                    return insstance;
+                }
+                else
+                {
+                    throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionsType.NO_SUCH_METHOD, "Im-proper Constructor Name");
+                }
+            }
+            else
+            {
+                throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionsType.NO_SUCH_CLASS_FOUND, "There is no such Class Avaliable");
+            }
+        }
     }
 }

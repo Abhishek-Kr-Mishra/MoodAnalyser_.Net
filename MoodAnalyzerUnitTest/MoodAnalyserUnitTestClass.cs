@@ -69,6 +69,12 @@ namespace MoodAnalyzerUnitTest
             object actual = MoodAnalyserReflection.CreateMoodAnalysis("MoodAnalyzer.MoodAnalyser", "MoodAnalyser");
             Assert.AreEqual(obj.GetType().Equals(actual.GetType()), true);
         }
-        
+        [TestMethod]
+        public void GivenMoodAnalyserClassName_WhenAnalyse_ShouldReturnObjectWithParameter()
+        {
+            object obj = new MoodAnalyser();
+            object actual = MoodAnalyserReflection.CreateMoodAnalysisInParameterConstructor("MoodAnalyzer.MoodAnalyser", "MoodAnalyser");
+            Assert.AreEqual(obj.GetType().Equals(actual.GetType()), true);
+        }
     }
 }
